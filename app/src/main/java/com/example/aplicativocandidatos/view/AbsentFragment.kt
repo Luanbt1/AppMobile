@@ -28,8 +28,10 @@ class AbsentFragment : Fragment() {
 
         //tipo do layout da recycler
         binding.recyclerGuests.layoutManager = LinearLayoutManager(context)
+
         // printa os dados na recycler view
         binding.recyclerGuests.adapter = adapter
+
         //quando clica em cima de um nome na recycler view
         val listener = object : OnGuestListener {
             override fun onClick(id: Int) {
@@ -39,7 +41,7 @@ class AbsentFragment : Fragment() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-
+            //deleta e gera a lista nova
             override fun onDelete(id: Int) {
                 viewModel.delete(id)
                 viewModel.getAbsent()
@@ -60,6 +62,7 @@ class AbsentFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+    //observa os dados e envia
     private fun observe() {
         viewModel.guests.observe(viewLifecycleOwner) {
             adapter.updatedGuests(it)

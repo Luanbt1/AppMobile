@@ -16,7 +16,7 @@ import com.example.aplicativocandidatos.model.GuestModel
 abstract class GuestDataBase : RoomDatabase() {
 
     abstract fun guestDAO(): GuestDAO
-
+    // inicializa o banco como um singleton para somente ser instanciado uma vez
     companion object {
         private lateinit var INSTANCE: GuestDataBase
         fun getDataBase(context: Context): GuestDataBase {
@@ -30,7 +30,7 @@ abstract class GuestDataBase : RoomDatabase() {
             }
             return INSTANCE
         }
-
+        // funcao de atualizacao de versao do banco
         private val MIGRATION_1_2: Migration = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(" DELETE FROM Guest")

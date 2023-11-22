@@ -12,14 +12,17 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicativocandidatos.R
 import com.example.aplicativocandidatos.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

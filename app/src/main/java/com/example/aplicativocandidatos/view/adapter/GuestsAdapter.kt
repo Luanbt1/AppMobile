@@ -23,11 +23,11 @@ class GuestsAdapter : RecyclerView.Adapter<GuestViewHolder>(){
     override fun onBindViewHolder(holder: GuestViewHolder, position: Int) {
         holder.bind(guestList[position])
     }
-
+    //pega o tamanho da lista levando em conta quantas pessoas estao registradas
     override fun getItemCount(): Int {
         return  guestList.count()
     }
-
+    // atualiza a lista
     fun updatedGuests(list: List<GuestModel>){
         guestList = list
         notifyDataSetChanged()

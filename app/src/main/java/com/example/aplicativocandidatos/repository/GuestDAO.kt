@@ -7,7 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.aplicativocandidatos.constants.DataBaseConstants
 import com.example.aplicativocandidatos.model.GuestModel
-
+//classe de crude no banco usando room
 @Dao
 interface GuestDAO {
 

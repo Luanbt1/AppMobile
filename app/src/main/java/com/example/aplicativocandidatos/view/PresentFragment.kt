@@ -42,7 +42,7 @@ class PresentFragment : Fragment() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-
+            // delete e atualiza a lista automaticamente
             override fun onDelete(id: Int) {
                 viewModel.delete(id)
                 viewModel.getPresent()
@@ -50,7 +50,6 @@ class PresentFragment : Fragment() {
         }
 
         adapter.attachListener(listener)
-
 
         observe()
 

@@ -1,5 +1,6 @@
 package com.example.aplicativocandidatos.constants
 
+// classe de constantes para facilitar a utilizacao do banco
 class DataBaseConstants private constructor() {
 
     object GUEST {

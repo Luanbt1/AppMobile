@@ -10,7 +10,7 @@ import com.example.aplicativocandidatos.repository.GuestRepository
 class GuestsViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = GuestRepository(application.applicationContext)
-
+    //camada logica que envia para o repository
     private val listAllGuests = MutableLiveData<List<GuestModel>>()
     val guests: LiveData<List<GuestModel>> = listAllGuests
 

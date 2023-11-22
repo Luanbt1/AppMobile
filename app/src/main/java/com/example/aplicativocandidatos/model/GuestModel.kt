@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//cria o banco usando room
+//diz os tipos de dados que virarao a tabela
 @Entity(tableName = "Guest")
 class GuestModel {
 

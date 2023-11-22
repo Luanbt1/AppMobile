@@ -35,7 +35,7 @@ class GuestFormViewModel(application: Application) : AndroidViewModel(applicatio
             }
         }
     }
-
+    //pega o id
     fun get(id: Int) {
         guestModel.value = repository.get(id)
     }

@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aplicativocandidatos.constants.DataBaseConstants
+import com.example.aplicativocandidatos.databinding.ActivityGuestFormBinding
 import com.example.aplicativocandidatos.databinding.FragmentAllGuestsBinding
+import com.example.aplicativocandidatos.model.GuestModel
 import com.example.aplicativocandidatos.view.adapter.GuestsAdapter
 import com.example.aplicativocandidatos.view.listener.OnGuestListener
 import com.example.aplicativocandidatos.viewmodel.GuestsViewModel
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class AllGuestsFragment : Fragment() {
@@ -23,16 +26,17 @@ class AllGuestsFragment : Fragment() {
     private lateinit var viewModel: GuestsViewModel
     private val adapter = GuestsAdapter()
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, b: Bundle?): View {
         viewModel = ViewModelProvider(this).get(GuestsViewModel::class.java)
         _binding = FragmentAllGuestsBinding.inflate(inflater, container, false)
+
 
         //tipo do layout da recycler
         binding.recyclerGuests.layoutManager = LinearLayoutManager(context)
 
         // printa os dados na recycler view
         binding.recyclerGuests.adapter = adapter
-
 
         //quando clica em cima de um nome na recycler view
         val listener = object : OnGuestListener {
@@ -51,8 +55,6 @@ class AllGuestsFragment : Fragment() {
         }
 
         adapter.attachListener(listener)
-
-
         observe()
 
         return binding.root
